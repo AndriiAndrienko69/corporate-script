@@ -1083,4 +1083,3 @@ const i18nData = {
   setInterval(showToast, INTERVAL);
 })();
 
-console.log("work")
