@@ -119,10 +119,10 @@ formSelector: '#order-form0, .order_block form, .order-form form, form.order_for
     const block = document.querySelector('.order_block, .order-block');
     if (block && isVisible(block)) return;
 
-    // 1) родная функция лендинга (пример с «дверями»)
-    if (typeof win.spin === 'function' && win.isOpenDoor === false) {
-      try { win.spin(); } catch {}
-    }
+    // 1) (disabled) родная функция лендинга с «дверями» — не открываем двери автоматически
+    // if (typeof win.spin === 'function' && win.isOpenDoor === false) {
+    //   try { win.spin(); } catch {}
+    // }
 
     // 2) частые кнопки-открыватели
     const openers = [
@@ -137,9 +137,9 @@ formSelector: '#order-form0, .order_block form, .order-form form, form.order_for
       }
     }
 
-    // 3) «двери» — клик по первой
-    const door = doc.querySelector('.door, .door__1, #door__1');
-    if (door) { try { door.dispatchEvent(new MouseEvent('click', {bubbles:true})); } catch {} }
+  // 3) (disabled) «двери» — не кликаем автоматически по элементам дверей
+  // const door = doc.querySelector('.door, .door__1, #door__1');
+  // if (door) { try { door.dispatchEvent(new MouseEvent('click', {bubbles:true})); } catch {} }
 
     // ждём появления блока заказа или видимой формы
     await waitFor(() => {
@@ -150,12 +150,11 @@ formSelector: '#order-form0, .order_block form, .order-form form, form.order_for
 
   // Мягкий скролл к форме/якорю
   const smoothScrollToForm = () => {
-    const anchor = doc.querySelector('.scrollToForm, #roulette, #forms');
-    const form = findBestForm();
-    const target = anchor || form;
+    // Scroll ONLY to the explicit anchor #goToForm
+    const target = doc.getElementById('goToForm');
     if (!target) return;
     try { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-    catch { if (target.id) location.hash = '#' + target.id; }
+    catch { location.hash = '#goToForm'; }
   };
 
   // Авто-подгон текста CTA: переносы + сжатие шрифта (до 12px) в пределах 2 строк
