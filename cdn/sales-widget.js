@@ -903,6 +903,24 @@ const i18nData = {
       "Заказ {inCity} быў аформлены.",
     ],
   },
+  ci: {
+    names: [
+      "Awa", "Yao", "Koffi", "Aminata", "Adama", "Mariam", "Ismaël", "Fanta", "Moussa", "Kouadio"
+    ],
+    fromCities: [
+      "Abidjan", "Bouaké", "Yamoussoukro", "Daloa", "San Pedro", "Korhogo", "Man", "Gagnoa", "Divo", "Abengourou"
+    ],
+    inCities: [
+      "Abidjan", "Bouaké", "Yamoussoukro", "Daloa", "San Pedro", "Korhogo", "Man", "Gagnoa", "Divo", "Abengourou"
+    ],
+    templates: [
+      "{name} de {fromCity} a effectué un achat à {inCity}.",
+      "{name} a commandé un produit depuis {fromCity}.",
+      "{name} vient de passer une commande à {inCity} !",
+      "{name} de {fromCity} a récemment acheté un article.",
+      "{name} vient de finaliser son achat à {inCity}."
+    ]
+  },
 };
 
 /* === sales-widget-i18n.js === */
