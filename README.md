@@ -15,3 +15,6 @@
 # success page translation
 
 <script src="https://cdn.jsdelivr.net/gh/AndriiAndrienko69/corporate-script@main/cdn/translation-sp.js"></script> 
+
+# success page HTML markup
+<script src="https://cdn.jsdelivr.net/gh/AndriiAndrienko69/corporate-script@main/cdn/successhtml.js" defer></script>
