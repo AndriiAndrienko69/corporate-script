@@ -43,23 +43,18 @@
               <svg viewBox="0 0 24 24">
                 <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.7-9.8 4.9v2.5h19.6v-2.5c0-3.2-6.5-4.9-9.8-4.9z" />
               </svg>
-              <span>${name}</span>
+              <span id="name_display">${name}</span>
             </div>
             <div class="pill">
               <svg viewBox="0 0 24 24">
                 <path d="M6.6 10.8c1.2 2.3 3.2 4.3 5.5 5.5l1.8-1.8c.2-.2.6-.3.9-.2 1 .3 2 .5 3.1 .5.5 0 .9.4.9.9v3c0 .5-.4.9-.9.9C9.6 19.6 4.4 14.4 4.4 7.5c0-.5.4-.9.9-.9h3c.5 0 .9.4.9.9 0 1.1.2 2.1.5 3.1.1.3 0 .7-.2.9l-1.9 1.8z" />
               </svg>
-              <span>${phone}</span>
+              <span id="phone_display">${phone}</span>
             </div>
             <a href="#update-form" class="edit-link" id="edit-link">✏️ Редагувати</a>
           </div>
 
-          <form class="form-edit" id="update-form" method="post" action="api.php?mode=update">
-            <input type="text" name="name" value="${name}" placeholder="Ваше ім’я" required id="name_input" />
-            <input type="tel" name="phone" value="${phone}" placeholder="Ваш телефон" required id="phone_input" />
-            <button type="submit" id="update_btn">Оновити</button>
-            <button type="button" id="confirm-ok-btn">Все вірно</button>
-          </form>
+          <div id="update-form-mount"></div>
 
           <div class="checkmark-success" id="checkmark-success">
             <div class="circle-bg">
@@ -107,10 +102,96 @@
 
     // Wire up small interactions after insertion
     const editLink = document.getElementById('edit-link');
-    const form = document.querySelector('.form-edit');
+    // Mount the server-provided form (from success.html) into our layout
+    const formMount = document.getElementById('update-form-mount');
+    const existingForm = document.getElementById('update-form');
+    if (formMount && existingForm) {
+      formMount.appendChild(existingForm);
+      // Ensure inputs have initial values from server data if empty
+      const _nameIn = existingForm.querySelector('#name_input');
+      const _phoneIn = existingForm.querySelector('#phone_input');
+      if (_nameIn && !_nameIn.value) _nameIn.value = data.name || '';
+      if (_phoneIn && !_phoneIn.value) _phoneIn.value = data.phone || '';
+      // Make sure it's hidden by default; will be shown when clicking edit
+      if (existingForm.style.display !== 'none') existingForm.style.display = 'none';
+    }
+
+    const form = existingForm || document.querySelector('.form-edit');
+    const nameInput = form ? form.querySelector('#name_input') : null;
+    const phoneInput = form ? form.querySelector('#phone_input') : null;
+    const nameDisplay = document.getElementById('name_display');
+    const phoneDisplay = document.getElementById('phone_display');
+    const checkmark = document.getElementById('checkmark-success');
+    const confirmOkBtn = form ? form.querySelector('#confirm-ok-btn') : null;
+
     if (editLink && form) {
       editLink.addEventListener('click', function () {
-        if (form.style.display !== 'block') form.style.display = 'block';
+        form.style.display = 'block';
+      });
+    }
+
+    // Helper: show animated checkmark without leaving the page
+    function showCheckmark() {
+      if (!checkmark) return;
+      try { checkmark.style.display = 'block'; } catch (_) {}
+      checkmark.classList.add('show');
+      setTimeout(() => {
+        checkmark.classList.remove('show');
+        try { checkmark.style.display = ''; } catch (_) {}
+      }, 3500);
+    }
+
+    // Inline message utility
+    function setFormMessage(msg, type) {
+      if (!form) return;
+      let el = document.getElementById('update-message');
+      if (!el) {
+        el = document.createElement('div');
+        el.id = 'update-message';
+        form.appendChild(el);
+      }
+      el.textContent = msg || '';
+      el.className = type ? `msg ${type}` : 'msg';
+    }
+
+    // Handle submit via fetch to avoid navigation to api.php
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const submitBtn = form.querySelector('#update_btn');
+        const prevText = submitBtn ? submitBtn.textContent : '';
+        if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Оновлюємо...'; }
+        setFormMessage('', '');
+
+        try {
+          const fd = new FormData(form);
+          const resp = await fetch(form.getAttribute('action') || 'api.php?mode=update', {
+            method: 'POST',
+            body: fd,
+            credentials: 'same-origin'
+          });
+
+          if (!resp.ok) throw new Error('Помилка оновлення');
+
+          // Update displayed values
+          if (nameDisplay && nameInput) nameDisplay.textContent = nameInput.value || '';
+          if (phoneDisplay && phoneInput) phoneDisplay.textContent = phoneInput.value || '';
+
+          showCheckmark();
+          setFormMessage('Дані оновлено ✓', 'success');
+          setTimeout(() => { try { form.style.display = 'none'; } catch (_) {} }, 600);
+        } catch (err) {
+          setFormMessage('Не вдалось оновити. Спробуйте ще раз.', 'error');
+        } finally {
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = prevText || 'Оновити'; }
+        }
+      });
+    }
+
+    if (confirmOkBtn) {
+      confirmOkBtn.addEventListener('click', () => {
+        showCheckmark();
+        if (form) form.style.display = 'none';
       });
     }
 
