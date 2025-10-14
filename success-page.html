@@ -23,7 +23,18 @@ $phone = htmlspecialchars($lead['receive']['phone'] ?? ($_GET['phone'] ?? ''), E
 
 <body>
   
-
+ <!-- Server-provided data for successhtml.js -->
+  <script id="success-data" type="application/json">
+    <?php
+      echo json_encode(
+        [
+          'name'  => $lead['receive']['name']  ?? ($_GET['name']  ?? ''),
+          'phone' => $lead['receive']['phone'] ?? ($_GET['phone'] ?? ''),
+        ],
+        JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES
+      );
+    ?>
+  </script>
   <!-- Scripts -->
    <script src="https://cdn.jsdelivr.net/gh/AndriiAndrienko69/corporate-script@main/cdn/successhtml.js" defer></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
