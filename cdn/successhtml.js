@@ -2,13 +2,26 @@
   function initRender() {
     // Read server-provided JSON data safely
     function getSuccessData() {
+      const fromQuery = (key) => {
+        try {
+          const sp = new URLSearchParams(window.location.search || '');
+          return sp.get(key) || '';
+        } catch (_) { return ''; }
+      };
+
       const el = document.getElementById('success-data');
-      if (!el) return { name: '', phone: '' };
-      try {
-        return JSON.parse(el.textContent || '{}');
-      } catch (_) {
-        return { name: '', phone: '' };
+      let data = { name: '', phone: '' };
+      if (el) {
+        try {
+          data = Object.assign(data, JSON.parse(el.textContent || '{}'));
+        } catch (_) {
+          // ignore
+        }
       }
+      // Fallbacks from URL params if missing
+      if (!data.name) data.name = fromQuery('name');
+      if (!data.phone) data.phone = fromQuery('phone');
+      return data;
     }
 
     // Escape text for injection into attributes/text nodes when using string HTML
@@ -53,8 +66,12 @@
             </div>
             <a href="#update-form" class="edit-link" id="edit-link">✏️ Редагувати</a>
           </div>
-
-          <div id="update-form-mount"></div>
+          <form class="form-edit" id="update-form" method="post" action="api.php?mode=update" style="display:none">
+            <input type="text" name="name" value="${name}" placeholder="Ваше ім’я" required id="name_input" />
+            <input type="tel" name="phone" value="${phone}" placeholder="Ваш телефон" required id="phone_input" />
+            <button type="submit" id="update_btn">Оновити</button>
+            <button type="button" id="confirm-ok-btn">Все вірно</button>
+          </form>
 
           <div class="checkmark-success" id="checkmark-success">
             <div class="circle-bg">
@@ -102,21 +119,7 @@
 
     // Wire up small interactions after insertion
     const editLink = document.getElementById('edit-link');
-    // Mount the server-provided form (from success.html) into our layout
-    const formMount = document.getElementById('update-form-mount');
-    const existingForm = document.getElementById('update-form');
-    if (formMount && existingForm) {
-      formMount.appendChild(existingForm);
-      // Ensure inputs have initial values from server data if empty
-      const _nameIn = existingForm.querySelector('#name_input');
-      const _phoneIn = existingForm.querySelector('#phone_input');
-      if (_nameIn && !_nameIn.value) _nameIn.value = data.name || '';
-      if (_phoneIn && !_phoneIn.value) _phoneIn.value = data.phone || '';
-      // Make sure it's hidden by default; will be shown when clicking edit
-      if (existingForm.style.display !== 'none') existingForm.style.display = 'none';
-    }
-
-    const form = existingForm || document.querySelector('.form-edit');
+    const form = document.getElementById('update-form');
     const nameInput = form ? form.querySelector('#name_input') : null;
     const phoneInput = form ? form.querySelector('#phone_input') : null;
     const nameDisplay = document.getElementById('name_display');
