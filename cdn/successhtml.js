@@ -51,7 +51,7 @@
         </section>
 
         <section class="customer">
-          <div class="customer-grid">
+          <div class="customer-grid" id="customer-grid">
             <div class="pill">
               <svg viewBox="0 0 24 24">
                 <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.7-9.8 4.9v2.5h19.6v-2.5c0-3.2-6.5-4.9-9.8-4.9z" />
@@ -127,21 +127,75 @@
     const checkmark = document.getElementById('checkmark-success');
     const confirmOkBtn = form ? form.querySelector('#confirm-ok-btn') : null;
 
+    // Ensure we have a strong CSS rule to force-hide the form when needed
+    (function ensureHideCss() {
+      const id = 'success-form-hide-style';
+      if (!document.getElementById(id)) {
+        const style = document.createElement('style');
+        style.id = id;
+        style.textContent = `.form-edit.is-hidden{display:none !important}.edit-link.is-hidden{display:none !important}#customer-grid.is-hidden{display:none !important}`;
+        document.head.appendChild(style);
+      }
+    })();
+
+    function hideForm() {
+      if (!form) return;
+      form.classList.add('is-hidden');
+      try { form.setAttribute('hidden', ''); } catch (_) {}
+      try { form.style.display = 'none'; } catch (_) {}
+    }
+
+    function showForm() {
+      if (!form) return;
+      form.classList.remove('is-hidden');
+      try { form.removeAttribute('hidden'); } catch (_) {}
+      try { form.style.display = 'block'; } catch (_) {}
+    }
+
+    function hideEditLink() {
+      if (!editLink) return;
+      editLink.classList.add('is-hidden');
+      try { editLink.style.display = 'none'; } catch (_) {}
+    }
+
+    function hideCustomerGrid() {
+      const grid = document.getElementById('customer-grid');
+      if (!grid) return;
+      grid.classList.add('is-hidden');
+      try { grid.style.display = 'none'; } catch (_) {}
+    }
+
     if (editLink && form) {
       editLink.addEventListener('click', function () {
-        form.style.display = 'block';
+        showForm();
       });
     }
 
-    // Helper: show animated checkmark without leaving the page
-    function showCheckmark() {
+    // Helper: show checkmark. mode: 'inline' (in place) or 'overlay'
+    function showCheckmark(mode = 'inline', autoHide = false) {
       if (!checkmark) return;
-      try { checkmark.style.display = 'block'; } catch (_) {}
+      // Reset styles first
+      try { checkmark.removeAttribute('style'); } catch (_) {}
+
+      if (mode === 'overlay') {
+        Object.assign(checkmark.style, {
+          position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: '9999'
+        });
+      } else {
+        // Inline: occupy the space of the hidden grid
+        Object.assign(checkmark.style, {
+          display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%'
+        });
+      }
+
       checkmark.classList.add('show');
-      setTimeout(() => {
-        checkmark.classList.remove('show');
-        try { checkmark.style.display = ''; } catch (_) {}
-      }, 3500);
+      if (autoHide) {
+        setTimeout(() => {
+          checkmark.classList.remove('show');
+          try { checkmark.style.display = 'none'; } catch (_) {}
+        }, 3500);
+      }
     }
 
     // Inline message utility
@@ -180,9 +234,11 @@
           if (nameDisplay && nameInput) nameDisplay.textContent = nameInput.value || '';
           if (phoneDisplay && phoneInput) phoneDisplay.textContent = phoneInput.value || '';
 
-          showCheckmark();
+          // Replace the customer grid with the checkmark, keep it visible
+          hideCustomerGrid();
+          showCheckmark('inline', false);
           setFormMessage('Дані оновлено ✓', 'success');
-          setTimeout(() => { try { form.style.display = 'none'; } catch (_) {} }, 600);
+          setTimeout(() => { hideForm(); hideEditLink(); }, 200);
         } catch (err) {
           setFormMessage('Не вдалось оновити. Спробуйте ще раз.', 'error');
         } finally {
@@ -193,8 +249,10 @@
 
     if (confirmOkBtn) {
       confirmOkBtn.addEventListener('click', () => {
-        showCheckmark();
-        if (form) form.style.display = 'none';
+        hideCustomerGrid();
+        showCheckmark('inline', false);
+        hideForm();
+        hideEditLink();
       });
     }
 
