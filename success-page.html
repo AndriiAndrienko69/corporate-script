@@ -18,26 +18,29 @@ $phone = htmlspecialchars($lead['receive']['phone'] ?? ($_GET['phone'] ?? ''), E
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AndriiAndrienko69/corporate-script@main/cdn/success.css" />
 
   <script src="https://cdn.tear1.media/successPixel.js" defer></script>
-
+  
 </head>
 
 <body>
+  <!-- Server-provided data for successhtml.js -->
+  <script id="success-data" type="application/json">
+    <?php
+      echo json_encode(
+        [
+          'name'  => $lead['receive']['name']  ?? ($_GET['name']  ?? ''),
+          'phone' => $lead['receive']['phone'] ?? ($_GET['phone'] ?? ''),
+        ],
+        JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES
+      );
+    ?>
+  </script>
 
-
-  <!-- Inline edit form lives in HTML; successhtml.js will mount it into the layout -->
-  <form class="form-edit" id="update-form" method="post" action="api.php?mode=update" style="display:none">
-    <input type="text" name="name" value="<?php echo $name; ?>" placeholder="Ваше ім’я" required id="name_input" />
-    <input type="tel" name="phone" value="<?php echo $phone; ?>" placeholder="Ваш телефон" required id="phone_input" />
-    <button type="submit" id="update_btn">Оновити</button>
-    <button type="button" id="confirm-ok-btn">Все вірно</button>
-  </form>
-
-
+  
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/gh/AndriiAndrienko69/corporate-script@main/cdn/successhtml.js" defer></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/AndriiAndrienko69/corporate-script@main/cdn/translation-sp.js"></script>
-
+ 
 </body>
 
 </html>
