@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const translations = {
         en: 'Order Now',
         es: 'Pedir ahora',
-        fr: 'Commander maintenant',
+        fr: 'Commande',
         de: 'Jetzt bestellen',
         it: 'Ordina ora',
         pt: 'Encomendar agora',
@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
         el: 'Παραγγείλετε τώρα',
         // Mexican and Costa Rican use Spanish
         mx: 'Pedir ahora',
-        cr: 'Pedir ahora'
+        cr: 'Pedir ahora',
+        ci: 'Commande', // Ivory Coast - French
     };
 
     // Country to language mapping
@@ -138,5 +139,20 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }, { threshold: 0.1 }); // 10% visible
         observer.observe(target);
+    }
+
+    // Hide when form is in view
+    const form = document.querySelector('form');
+    if (form) {
+        const formObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    container.style.display = 'none';
+                } else {
+                    container.style.display = 'flex';
+                }
+            });
+        }, { threshold: 0.1 });
+        formObserver.observe(form);
     }
 });
