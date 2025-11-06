@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const translations = {
         en: 'Order Now',
         es: 'Pedir ahora',
+        hi: 'अभी ऑर्डर करें',
         fr: 'Commande',
         de: 'Jetzt bestellen',
         it: 'Ordina ora',
