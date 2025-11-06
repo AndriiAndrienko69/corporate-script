@@ -921,6 +921,36 @@ const i18nData = {
       "{name} vient de finaliser son achat à {inCity}."
     ]
   },
+  cr: {
+  names: ["José", "María", "Carlos", "Fernanda", "Andrés", "Sofía", "Diego", "Laura", "Luis", "Valeria"],
+  fromCities: ["de San José", "de Alajuela", "de Heredia", "de Cartago", "de Puntarenas"],
+  inCities: ["en San José", "en Alajuela", "en Heredia", "en Cartago", "en Puntarenas"],
+  templates: [
+    "{name} {fromCity} hizo una compra reciente.",
+    "Alguien {inCity} acaba de realizar un pedido.",
+    "¡Nuevo pedido recibido {fromCity}!",
+    "Un cliente {inCity} compró un producto.",
+    "{name} completó su pedido hace un momento.",
+    "Pedido confirmado {fromCity}.",
+    "Una compra fue completada hace unos minutos.",
+    "El pedido {inCity} fue registrado."
+  ],
+},
+in: {
+  names: ["Arjun", "Priya", "Ravi", "Aditi", "Vikram", "Neha", "Rahul", "Ananya", "Suresh", "Pooja"],
+  fromCities: ["से दिल्ली से", "से मुंबई से", "से बेंगलुरु से", "से चेन्नई से", "से कोलकाता से"],
+  inCities: ["दिल्ली में", "मुंबई में", "बेंगलुरु में", "चेन्नई में", "कोलकाता में"],
+  templates: [
+    "{name} {fromCity} ने हाल ही में खरीदारी की।",
+    "किसी ने {inCity} ऑर्डर किया है।",
+    "नई ऑर्डर प्राप्त हुई {fromCity}!",
+    "ग्राहक {inCity} ने उत्पाद खरीदा।",
+    "{name} ने अपना ऑर्डर अभी पूरा किया।",
+    "ऑर्डर की पुष्टि हुई {fromCity}।",
+    "कुछ मिनट पहले एक खरीद पूरी हुई।",
+    "{inCity} में ऑर्डर दर्ज किया गया।"
+  ],
+},
 };
 
 /* === sales-widget-i18n.js === */
