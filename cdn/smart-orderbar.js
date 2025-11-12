@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'HR': 'hr',    // Croatia
         'SR': 'sr',    // Serbia
         'SL': 'sl',    // Slovenia
-        'EL': 'el',    // Greece
+        'GR': 'el',    // Greece
         // Add more as needed
     };
 
