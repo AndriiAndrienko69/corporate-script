@@ -694,20 +694,48 @@ const i18nData = {
     ],
   },
   sv: {
-    names: ["Johan", "Emma", "Lars", "Sofia", "Erik", "Anna", "Karl", "Elin", "Henrik", "Sara"],
-    fromCities: ["från Stockholm", "från Göteborg", "från Malmö", "från Uppsala", "från Västerås"],
-    inCities: ["i Stockholm", "i Göteborg", "i Malmö", "i Uppsala", "i Västerås"],
-    templates: [
-      "{name} {fromCity} gjorde precis ett köp.",
-      "Någon {inCity} lade precis en beställning.",
-      "Ny beställning mottagen {fromCity}!",
-      "En kund {inCity} gjorde ett köp.",
-      "{name} har precis slutfört sin beställning.",
-      "Beställning mottagen {fromCity}.",
-      "Ett köp slutfördes för några minuter sedan.",
-      "Beställning {inCity} skapades.",
-    ],
-  },
+  names: ["Carlos", "María", "José", "Ana", "Luis", "Sofía", "Juan", "Camila", "Pedro", "Gabriela", "Miguel", "Valeria"],
+  fromCities: [
+    "de San Salvador", "de Santa Ana", "de San Miguel", "de Soyapango", "de Mejicanos",
+    "de Apopa", "de Delgado", "de Usulután", "de Sonsonate", "de Metapán"
+  ],
+  inCities: [
+    "en San Salvador", "en Santa Ana", "en San Miguel", "en Soyapango", "en Mejicanos",
+    "en Apopa", "en Delgado", "en Usulután", "en Sonsonate", "en Metapán"
+  ],
+  templates: [
+    "{name} {fromCity} acaba de realizar una compra.",
+    "Alguien {inCity} acaba de hacer un pedido.",
+    "¡Nuevo pedido recibido {fromCity}!",
+    "Un cliente {inCity} ha completado una compra.",
+    "{name} acaba de finalizar su pedido.",
+    "Se recibió un pedido {fromCity}.",
+    "Hace unos minutos se completó una compra.",
+    "Pedido realizado {inCity}.",
+  ],
+},
+  gt: {
+  names: ["Carlos", "María", "José", "Ana", "Luis", "Sofía", "Juan", "Andrea", "Pedro", "Gabriela", "Miguel", "Paola"],
+  fromCities: [
+    "de Ciudad de Guatemala", "de Mixco", "de Villa Nueva", "de Quetzaltenango", "de Escuintla",
+    "de Cobán", "de San Marcos", "de Chimaltenango", "de Jalapa", "de Huehuetenango"
+  ],
+  inCities: [
+    "en Ciudad de Guatemala", "en Mixco", "en Villa Nueva", "en Quetzaltenango", "en Escuintla",
+    "en Cobán", "en San Marcos", "en Chimaltenango", "en Jalapa", "en Huehuetenango"
+  ],
+  templates: [
+    "{name} {fromCity} acaba de realizar una compra.",
+    "Alguien {inCity} acaba de hacer un pedido.",
+    "¡Nuevo pedido recibido {fromCity}!",
+    "Un cliente {inCity} ha completado una compra.",
+    "{name} acaba de finalizar su pedido.",
+    "Pedido recibido {fromCity}.",
+    "Hace unos minutos se completó una compra.",
+    "Pedido realizado {inCity}.",
+  ],
+},
+
   da: {
     names: ["Jens", "Emma", "Lars", "Sofia", "Mikkel", "Anna", "Peter", "Ida", "Nikolaj", "Sara"],
     fromCities: ["fra København", "fra Aarhus", "fra Odense", "fra Aalborg", "fra Esbjerg"],
