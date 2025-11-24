@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'SR': 'sr',    // Serbia
         'SL': 'sl',    // Slovenia
         'GR': 'el',    // Greece
+        'RS': 'rs',
         // Add more as needed
     };
 
