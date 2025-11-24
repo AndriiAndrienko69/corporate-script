@@ -26,7 +26,199 @@
       pl: { title: "Dziękujemy", thanks: "Dziękujemy za zamówienie!", contact: "Otrzymaliśmy twoje zamówienie, jest przetwarzane.", contact2: "Skontaktujemy się z tobą wkrótce.", name_placeholder: "Twoje imię", phone_placeholder: "Twój telefon", update: "Aktualizuj", correct: "Wszystko się zgadza", update_error: "Wystąpił błąd podczas aktualizacji. Spróbuj ponownie.", edit: "✏️ Edytuj", steps: ["Sprawdź, czy twoje dane są poprawne", "Odbierz telefon od naszego specjalisty", "Trzymaj telefon w pobliżu", "Telefon może zadzwonić z nieznanego numeru"], notice: "⚠️ Nie przegap połączenia! Trzymaj telefon w pobliżu i wyłącz tryb cichy." },
       de: { title: "Danke", thanks: "Vielen Dank für Ihre Bestellung!", contact: "Wir haben Ihre Bestellung erhalten, sie wird bearbeitet.", contact2: "Wir werden Sie in Kürze kontaktieren.", name_placeholder: "Ihr Name", phone_placeholder: "Ihre Telefonnummer", update: "Aktualisieren", correct: "Alles korrekt", update_error: "Beim Aktualisieren ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.", edit: "✏️ Bearbeiten", steps: ["Überprüfen Sie, ob Ihre Daten korrekt sind", "Beantworten Sie den Anruf unseres Spezialisten", "Halten Sie Ihr Telefon in der Nähe", "Der Anruf kann von einer unbekannten Nummer kommen"], notice: "⚠️ Verpassen Sie den Anruf nicht! Halten Sie Ihr Telefon in der Nähe und deaktivieren Sie den Lautlosmodus." },
       fr: { title: "Merci", thanks: "Merci pour votre commande!", contact: "Nous avons reçu votre commande, elle est en cours de traitement.", contact2: "Nous vous contacterons sous peu.", name_placeholder: "Votre nom", phone_placeholder: "Votre téléphone", update: "Mettre à jour", correct: "Tout est correct", update_error: "Une erreur s'est produite lors de la mise à jour. Veuillez réessayer.", edit: "✏️ Modifier", steps: ["Vérifiez que vos informations sont correctes", "Répondez à l'appel de notre spécialiste", "Gardez votre téléphone à proximité", "L'appel peut provenir d'un numéro inconnu"], notice: "⚠️ Ne manquez pas l'appel ! Veuillez garder votre téléphone à proximité et désactiver le mode silencieux." },
-      ci: { title: "Merci", thanks: "Merci pour votre commande!", contact: "Nous avons reçu votre commande, elle est en cours de traitement.", contact2: "Nous vous contacterons sous peu.", name_placeholder: "Votre nom", phone_placeholder: "Votre téléphone", update: "Mettre à jour", correct: "Tout est correct", update_error: "Une erreur s'est produite lors de la mise à jour. Veuillez réessayer.", edit: "✏️ Modifier", steps: ["Vérifiez que vos informations sont correctes", "Répondez à l'appel de notre spécialiste", "Gardez votre téléphone à proximité", "L'appel peut provenir d'un numéro inconnu"], notice: "⚠️ Ne manquez pas l'appel ! Veuillez garder votre téléphone à proximité et désactiver le mode silencieux." }
+      ci: { title: "Merci", thanks: "Merci pour votre commande!", contact: "Nous avons reçu votre commande, elle est en cours de traitement.", contact2: "Nous vous contacterons sous peu.", name_placeholder: "Votre nom", phone_placeholder: "Votre téléphone", update: "Mettre à jour", correct: "Tout est correct", update_error: "Une erreur s'est produite lors de la mise à jour. Veuillez réessayer.", edit: "✏️ Modifier", steps: ["Vérifiez que vos informations sont correctes", "Répondez à l'appel de notre spécialiste", "Gardez votre téléphone à proximité", "L'appel peut provenir d'un numéro inconnu"], notice: "⚠️ Ne manquez pas l'appel ! Veuillez garder votre téléphone à proximité et désactiver le mode silencieux." },
+              in: { 
+        title: "धन्यवाद", thanks: "आपके आदेश के लिए धन्यवाद!", 
+        contact: "हमने आपका आदेश प्राप्त कर लिया है, यह संसाधित किया जा रहा है।", 
+        contact2: "हम आपसे जल्द ही संपर्क करेंगे।", 
+        name_placeholder: "आपका नाम", phone_placeholder: "आपका फोन", 
+        update: "अपडेट करें", correct: "सब कुछ सही है", 
+        update_error: "अपडेट करते समय एक त्रुटि हुई। कृपया पुनः प्रयास करें।", 
+        edit: "✏️ संपादित करें", 
+        steps: ["जांचें कि आपकी जानकारी सही है", "हमारे विशेषज्ञ के कॉल का जवाब दें", "फोन पास रखें", "कॉल अज्ञात नंबर से आ सकता है"], 
+        notice: "⚠️ कॉल न चूकें! कृपया फोन पास रखें और साइलेंट मोड बंद करें।" 
+      },
+
+      rs: { 
+        title: "Hvala", thanks: "Hvala na vašoj porudžbini!", 
+        contact: "Vaša porudžbina je primljena i obrađuje se.", 
+        contact2: "Uskoro ćemo vas kontaktirati.", 
+        name_placeholder: "Vaše ime", phone_placeholder: "Vaš telefon", 
+        update: "Ažuriraj", correct: "Sve je tačno", 
+        update_error: "Greška prilikom ažuriranja. Pokušajte ponovo.", 
+        edit: "✏️ Izmeni", 
+        steps: ["Proverite tačnost podataka", "Odgovorite na poziv našeg stručnjaka", "Držite telefon blizu", "Poziv može doći sa nepoznatog broja"], 
+        notice: "⚠️ Ne propustite poziv! Držite telefon blizu i isključite tihi režim."
+      },
+
+      ms: { 
+        title: "Terima kasih", thanks: "Terima kasih atas pesanan anda!", 
+        contact: "Kami telah menerima pesanan anda, ia sedang diproses.", 
+        contact2: "Kami akan menghubungi anda tidak lama lagi.", 
+        name_placeholder: "Nama anda", phone_placeholder: "Telefon anda", 
+        update: "Kemas kini", correct: "Semuanya betul", 
+        update_error: "Ralat berlaku semasa mengemas kini. Sila cuba lagi.", 
+        edit: "✏️ Edit", 
+        steps: ["Pastikan maklumat anda betul", "Jawab panggilan pakar kami", "Pastikan telefon anda berdekatan", "Panggilan mungkin dari nombor tidak dikenal"], 
+        notice: "⚠️ Jangan terlepas panggilan! Pastikan telefon dekat dan nyahaktifkan mod senyap."
+      },
+
+      zh_CN: {
+        title: "谢谢", thanks: "感谢您的订单！",
+        contact: "我们已经收到您的订单，正在处理。",
+        contact2: "我们会尽快与您联系。",
+        name_placeholder: "您的姓名", phone_placeholder: "您的电话",
+        update: "更新", correct: "一切正确",
+        update_error: "更新时发生错误。请重试。",
+        edit: "✏️ 编辑",
+        steps: ["检查您的信息是否正确", "接听我们专家的电话", "请随身携带手机", "电话可能来自未知号码"],
+        notice: "⚠️ 请不要错过来电！请将手机放在身边并关闭静音模式。"
+      },
+
+      zh_TW: {
+        title: "謝謝", thanks: "感謝您的訂單！",
+        contact: "我們已收到您的訂單，正在處理中。",
+        contact2: "我們將儘快與您聯繫。",
+        name_placeholder: "您的姓名", phone_placeholder: "您的電話",
+        update: "更新", correct: "一切正確",
+        update_error: "更新時發生錯誤。請再試一次。",
+        edit: "✏️ 編輯",
+        steps: ["請確認您的資料正確", "請接聽我們專家的來電", "請將手機放在身邊", "來電可能來自未知號碼"],
+        notice: "⚠️ 別錯過來電！請保持手機在身邊並關閉靜音模式。"
+      },
+
+      ja: {
+        title: "ありがとうございます", thanks: "ご注文ありがとうございます！",
+        contact: "ご注文を受け付けました。ただいま処理中です。",
+        contact2: "担当者よりまもなくご連絡いたします。",
+        name_placeholder: "お名前", phone_placeholder: "お電話番号",
+        update: "更新", correct: "すべて正しい",
+        update_error: "更新中にエラーが発生しました。再試行してください。",
+        edit: "✏️ 編集",
+        steps: ["情報が正しいか確認してください", "担当者からの電話に出てください", "電話を手元に置いてください", "電話は非通知番号の場合があります"],
+        notice: "⚠️ 電話を見逃さないでください！サイレントモードを解除して近くに置いてください。"
+      },
+
+      ko: {
+        title: "감사합니다", thanks: "주문해 주셔서 감사합니다!",
+        contact: "주문을 성공적으로 접수했습니다. 처리 중입니다.",
+        contact2: "곧 연락드리겠습니다.",
+        name_placeholder: "이름", phone_placeholder: "전화번호",
+        update: "업데이트", correct: "모두 정확합니다",
+        update_error: "업데이트 중 오류가 발생했습니다. 다시 시도하세요.",
+        edit: "✏️ 수정",
+        steps: ["정보가 정확한지 확인하세요", "전문가의 전화를 받아주세요", "휴대폰을 가까이 두세요", "전화는 비공개 번호일 수 있습니다"],
+        notice: "⚠️ 전화를 놓치지 마세요! 휴대폰을 가까이 두고 무음 모드를 해제하세요."
+      },
+
+      ar: {
+        title: "شكراً", thanks: "شكراً لطلبك!",
+        contact: "لقد استلمنا طلبك، وهو قيد المعالجة.",
+        contact2: "سنتواصل معك قريباً.",
+        name_placeholder: "اسمك", phone_placeholder: "هاتفك",
+        update: "تحديث", correct: "كل شيء صحيح",
+        update_error: "حدث خطأ أثناء التحديث. يرجى المحاولة مرة أخرى.",
+        edit: "✏️ تعديل",
+        steps: ["تحقق من صحة معلوماتك", "أجب على مكالمة المختص", "أبقِ هاتفك بالقرب منك", "قد تكون المكالمة من رقم غير معروف"],
+        notice: "⚠️ لا تفوّت المكالمة! يرجى إبقاء هاتفك قريباً وإيقاف الوضع الصامت."
+      },
+
+      tr: {
+        title: "Teşekkürler", thanks: "Siparişiniz için teşekkürler!",
+        contact: "Siparişinizi aldık, işleniyor.",
+        contact2: "Sizinle yakında iletişime geçeceğiz.",
+        name_placeholder: "Adınız", phone_placeholder: "Telefonunuz",
+        update: "Güncelle", correct: "Her şey doğru",
+        update_error: "Güncelleme sırasında hata oluştu. Lütfen tekrar deneyin.",
+        edit: "✏️ Düzenle",
+        steps: ["Bilgilerinizin doğru olduğundan emin olun", "Uzmanımızın çağrısına cevap verin", "Telefonunuzu yakın tutun", "Arama bilinmeyen bir numaradan olabilir"],
+        notice: "⚠️ Aramayı kaçırmayın! Telefonunuzu yakın tutun ve sessiz modu kapatın."
+      },
+
+      id: {
+        title: "Terima kasih", thanks: "Terima kasih atas pesanan Anda!",
+        contact: "Kami telah menerima pesanan Anda dan sedang diproses.",
+        contact2: "Kami akan segera menghubungi Anda.",
+        name_placeholder: "Nama Anda", phone_placeholder: "Telepon Anda",
+        update: "Perbarui", correct: "Semua benar",
+        update_error: "Terjadi kesalahan saat memperbarui. Coba lagi.",
+        edit: "✏️ Edit",
+        steps: ["Periksa apakah data Anda benar", "Jawab panggilan dari spesialis kami", "Jaga telepon tetap dekat", "Panggilan mungkin berasal dari nomor tak dikenal"],
+        notice: "⚠️ Jangan lewatkan panggilan! Jaga telepon dekat dan matikan mode senyap."
+      },
+
+      vi: {
+        title: "Cảm ơn", thanks: "Cảm ơn bạn đã đặt hàng!",
+        contact: "Chúng tôi đã nhận được đơn hàng của bạn và đang xử lý.",
+        contact2: "Chúng tôi sẽ liên hệ với bạn sớm.",
+        name_placeholder: "Tên của bạn", phone_placeholder: "Số điện thoại",
+        update: "Cập nhật", correct: "Mọi thứ đều đúng",
+        update_error: "Đã xảy ra lỗi khi cập nhật. Vui lòng thử lại.",
+        edit: "✏️ Chỉnh sửa",
+        steps: ["Kiểm tra thông tin của bạn", "Trả lời cuộc gọi từ chuyên gia của chúng tôi", "Giữ điện thoại bên cạnh", "Cuộc gọi có thể đến từ số lạ"],
+        notice: "⚠️ Đừng bỏ lỡ cuộc gọi! Giữ điện thoại gần và tắt chế độ im lặng."
+      },
+
+      th: {
+        title: "ขอบคุณ", thanks: "ขอบคุณสำหรับคำสั่งซื้อ!",
+        contact: "เราได้รับคำสั่งซื้อของคุณแล้ว กำลังดำเนินการอยู่",
+        contact2: "เราจะติดต่อคุณในไม่ช้า",
+        name_placeholder: "ชื่อของคุณ", phone_placeholder: "โทรศัพท์ของคุณ",
+        update: "อัปเดต", correct: "ทุกอย่างถูกต้อง",
+        update_error: "เกิดข้อผิดพลาดในการอัปเดต โปรดลองอีกครั้ง",
+        edit: "✏️ แก้ไข",
+        steps: ["ตรวจสอบข้อมูลให้ถูกต้อง", "รับสายจากผู้เชี่ยวชาญของเรา", "เก็บโทรศัพท์ไว้ใกล้ตัว", "สายอาจมาจากเบอร์ที่ไม่รู้จัก"],
+        notice: "⚠️ ห้ามพลาดสาย! เก็บโทรศัพท์ไว้ใกล้และปิดโหมดเงียบ"
+      },
+
+      bn: {
+        title: "ধন্যবাদ", thanks: "আপনার অর্ডারের জন্য ধন্যবাদ!",
+        contact: "আমরা আপনার অর্ডার পেয়েছি, এটি প্রক্রিয়াধীন রয়েছে।",
+        contact2: "আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব।",
+        name_placeholder: "আপনার নাম", phone_placeholder: "আপনার ফোন",
+        update: "আপডেট", correct: "সবকিছু ঠিক আছে",
+        update_error: "আপডেট করার সময় একটি ত্রুটি ঘটেছে। আবার চেষ্টা করুন।",
+        edit: "✏️ সম্পাদনা",
+        steps: ["আপনার তথ্য সঠিক কিনা যাচাই করুন", "আমাদের বিশেষজ্ঞের কলের উত্তর দিন", "ফোনটি কাছে রাখুন", "কলটি অজানা নম্বর থেকে আসতে পারে"],
+        notice: "⚠️ কলটি মিস করবেন না! ফোনটি কাছে রাখুন এবং সাইলেন্ট মোড বন্ধ করুন।"
+      },
+
+      ur: {
+        title: "شکریہ", thanks: "آپ کے آرڈر کا شکریہ!",
+        contact: "ہمیں آپ کا آرڈر مل گیا ہے، یہ پراسیس ہو رہا ہے۔",
+        contact2: "ہم جلد ہی آپ سے رابطہ کریں گے۔",
+        name_placeholder: "آپ کا نام", phone_placeholder: "آپ کا فون",
+        update: "اپ ڈیٹ کریں", correct: "سب درست ہے",
+        update_error: "اپ ڈیٹ کے دوران خرابی ہوئی۔ دوبارہ کوشش کریں۔",
+        edit: "✏️ ترمیم کریں",
+        steps: ["اپنی معلومات کی درستگی چیک کریں", "ہمارے ماہر کی کال کا جواب دیں", "فون پاس رکھیں", "کال کسی انجان نمبر سے آ سکتی ہے"],
+        notice: "⚠️ کال مس نہ کریں! براہ کرم فون قریب رکھیں اور سائلنٹ موڈ بند کریں۔"
+      },
+
+      he: {
+        title: "תודה", thanks: "תודה על ההזמנה שלך!",
+        contact: "קיבלנו את ההזמנה שלך, היא בטיפול.",
+        contact2: "ניצור איתך קשר בקרוב.",
+        name_placeholder: "השם שלך", phone_placeholder: "הטלפון שלך",
+        update: "עדכן", correct: "הכול נכון",
+        update_error: "אירעה שגיאה בעדכון. נסה שוב.",
+        edit: "✏️ עריכה",
+        steps: ["בדוק שהמידע שלך נכון", "ענה לשיחת המומחה שלנו", "השאר את הטלפון בקרבתך", "השיחה עשויה להגיע ממספר לא מוכר"],
+        notice: "⚠️ אל תפספס את השיחה! השאר את הטלפון לידך וכבה מצב שקט."
+      },
+
+      fa: {
+        title: "متشکرم", thanks: "از سفارش شما متشکریم!",
+        contact: "سفارش شما دریافت شد و در حال پردازش است.",
+        contact2: "به زودی با شما تماس خواهیم گرفت.",
+        name_placeholder: "نام شما", phone_placeholder: "تلفن شما",
+        update: "به‌روزرسانی", correct: "همه چیز درست است",
+        update_error: "خطا در هنگام به‌روزرسانی رخ داد. دوباره تلاش کنید.",
+        edit: "✏️ ویرایش",
+        steps: ["اطلاعات خود را بررسی کنید", "به تماس کارشناس ما پاسخ دهید", "تلفن را نزدیک خود نگه دارید", "تماس ممکن است از شماره ناشناس باشد"],
+        notice: "⚠️ تماس را از دست ندهید! تلفن را نزدیک نگه دارید و حالت بی‌صدا را خاموش کنید."
+      }
+
     };
 
 
