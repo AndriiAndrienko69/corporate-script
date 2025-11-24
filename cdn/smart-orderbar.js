@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mx: 'Pedir ahora',
         cr: 'Pedir ahora',
         ci: 'Commande', // Ivory Coast - French
+        rs: 'Поручи сада',
     };
 
     // Country to language mapping
