@@ -20,6 +20,35 @@ const i18nData = {
       "Order received {fromCity}.",
     ],
   },
+  hn: {
+  names: [
+    "Carlos", "María", "José", "Ana", "Luis", "Sofía",
+    "Juan", "Gabriela", "Miguel", "Paola", "Ricardo", "Camila",
+    "Andrés", "Valeria", "Fernando", "Lucía"
+  ],
+  fromCities: [
+    "desde Tegucigalpa", "desde San Pedro Sula", "desde La Ceiba",
+    "desde Choloma", "desde El Progreso", "desde Comayagua",
+    "desde Danlí", "desde Choluteca", "desde Puerto Cortés",
+    "desde Siguatepeque"
+  ],
+  inCities: [
+    "en Tegucigalpa", "en San Pedro Sula", "en La Ceiba",
+    "en Choloma", "en El Progreso", "en Comayagua",
+    "en Danlí", "en Choluteca", "en Puerto Cortés",
+    "en Siguatepeque"
+  ],
+  templates: [
+    "{name} {fromCity} acaba de hacer una compra.",
+    "Alguien {inCity} acaba de realizar un pedido.",
+    "{name} completó una compra hace unos minutos.",
+    "¡Nuevo pedido {fromCity}!",
+    "{name} acaba de realizar un pedido.",
+    "Un cliente {inCity} hizo una compra.",
+    "{name} acaba de finalizar su compra.",
+    "Pedido recibido {fromCity}.",
+  ]
+},
 
   ua: {
     names: ["Олена", "Іван", "Марія", "Андрій", "Софія", "Олександр", "Катерина", "Михайло", "Наталія", "Богдан", "Владислав", "Анастасія"],
