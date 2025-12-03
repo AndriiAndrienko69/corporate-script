@@ -243,15 +243,15 @@
 
     // Язык
     function getLangFromBrowser() {
-      const lang = (navigator.language || navigator.userLanguage || 'uk')
+      const lang = (navigator.language || navigator.userLanguage || 'en')
         .slice(0, 2)
         .toLowerCase();
-      return translations[lang] ? lang : 'uk';
+      return translations[lang] ? lang : 'en';
     }
 
     // Применение
     function applyTranslation(lang) {
-      const t = translations[lang] || translations.uk;
+      const t = translations[lang] || translations.en;
 
       // Заголовок страницы по переводу
       document.title = t.title || (translations.en && translations.en.title) || document.title;
