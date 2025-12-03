@@ -217,7 +217,26 @@
         edit: "✏️ ویرایش",
         steps: ["اطلاعات خود را بررسی کنید", "به تماس کارشناس ما پاسخ دهید", "تلفن را نزدیک خود نگه دارید", "تماس ممکن است از شماره ناشناس باشد"],
         notice: "⚠️ تماس را از دست ندهید! تلفن را نزدیک نگه دارید و حالت بی‌صدا را خاموش کنید."
-      }
+      },
+        hn: {
+  title: "Gracias",
+  thanks: "¡Gracias por tu pedido!",
+  contact: "Hemos recibido tu pedido, está siendo procesado.",
+  contact2: "Nos pondremos en contacto contigo en breve.",
+  name_placeholder: "Tu nombre",
+  phone_placeholder: "Tu teléfono",
+  update: "Actualizar",
+  correct: "Todo es correcto",
+  update_error: "Ocurrió un error al actualizar. Por favor, inténtalo de nuevo.",
+  edit: "✏️ Editar",
+  steps: [
+    "Verifica que tus datos sean correctos",
+    "Responde la llamada de nuestro especialista",
+    "Mantén tu teléfono cerca",
+    "La llamada puede venir de un número desconocido"
+  ],
+  notice: "⚠️ ¡No pierdas la llamada! Mantén tu teléfono cerca y desactiva el modo silencio."
+},
 
     };
 
