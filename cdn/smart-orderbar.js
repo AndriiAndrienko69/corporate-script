@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Translations
     const translations = {
         en: 'Order Now',
+        ph: 'Order Now',
         es: 'Pedir ahora',
         hn: 'Pedir ahora',
         hi: 'अभी ऑर्डर करें',
@@ -58,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'GR': 'el',    // Greece
         'RS': 'rs',
         'HN': 'hn',
+        'PH': 'ph',
         // Add more as needed
     };
 
