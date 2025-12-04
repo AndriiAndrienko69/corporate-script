@@ -19,6 +19,32 @@ const i18nData = {
       "{name} just checked out.",
       "Order received {fromCity}.",
     ],
+    ph: {
+  names: [
+    "Juan", "Maria", "Jose", "Angel", "Mark", "Grace", "John Paul", "Kim", 
+    "Daniel", "Aira", "Michael", "Jasmine", "Karl", "Patricia", "Gabriel", "Nicole"
+  ],
+  fromCities: [
+    "from Manila", "from Quezon City", "from Cebu City", "from Davao City", "from Makati",
+    "from Pasig", "from Baguio", "from Iloilo City", "from Bacolod", "from Cagayan de Oro",
+    "from Zamboanga City", "from Pasay"
+  ],
+  inCities: [
+    "in Manila", "in Quezon City", "in Cebu City", "in Davao City", "in Makati",
+    "in Pasig", "in Baguio", "in Iloilo City", "in Bacolod", "in Cagayan de Oro",
+    "in Zamboanga City", "in Pasay"
+  ],
+  templates: [
+    "{name} {fromCity} just made a purchase.",
+    "Someone {inCity} just placed an order.",
+    "{name} completed a purchase a few minutes ago.",
+    "New order received {fromCity}!",
+    "{name} just placed an order.",
+    "A customer {inCity} made a purchase.",
+    "{name} just checked out.",
+    "Order received {fromCity}.",
+  ]
+},
   },
   hn: {
   names: [
@@ -1122,6 +1148,7 @@ in: {
   // коротке "N хв. тому" для популярних мов (fallback -> en)
   const agoDict = {
     en: m => `${m} minutes ago`,
+    ph: m => `${m} minutes ago`,
     ua: m => `${m} хв. тому`,
     uk: m => `${m} хв. тому`,
     ru: m => `${m} мин. назад`,
